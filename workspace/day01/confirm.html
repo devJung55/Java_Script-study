@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>확인 대화상자 confirm()</title>
+</head>
+<body></body>
+<script>
+    let message = "";
+
+    if(confirm("결제 하시겠습니까?")) {
+        message = "결제 완료";
+    } else {
+        message = "결제 취소";
+    }
+
+    alert(message);
+</script>
+</html>

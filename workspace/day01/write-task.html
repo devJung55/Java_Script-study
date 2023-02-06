@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document.write() 실습</title>
+</head>
+<body>
+    <!-- 
+        <br> 태그를 사용하지 않고, 덧셈 결과는 직접 연산을 통해 출력한다.
+
+        아래 문서를 그대로 write(), writeln()을 사용하여 작성한다
+     -->
+
+     <!-- 
+        document.write() 활용
+        ----------------------------------(hr 태그)
+        Welcome!
+
+        2 + 5는
+        7입니다.
+      -->
+</body>
+<script>
+    with(document) {
+        let two = 2;
+        let five = 5;
+
+        write("<h3>덧셈을 해보아요.</h3>");
+        write("<hr>");
+        write("<h3>Welcome!</h3>");
+        
+        write("<pre>");
+        writeln(`${two} + ${five}는`);
+        write(`${two + five}입니다.`);
+        write("<pre>");
+        }
+</script>
+</html>

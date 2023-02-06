@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document.write() 사용</title>
+</head>
+<body></body>
+<script>
+    // backtick(`) : 여러 줄을 하나의 값으로 인식 시키거나 따옴표의 종류가 많아질 때 사용한다.
+
+    // document.write("<h3>Welcome!</h3>");
+    // document.write("<pre>");
+    // document.writeln("<span>hello</span>")
+    // document.write("<span>hi</span>")
+    // document.write("<pre>");
+
+    // with(객체명){} : 중괄호 안에 모든 필드 앞에 객체명에 작성한 객체가 붙는다.
+    with(document) {
+        write(`<h1 class='intro'>Welcome!</h1>`);
+        write(`<span>${1+1}</span>`);
+    }
+    
+    // ES6
+    // 템플릿 리터럴
+    // document.write(`<h1 class='intro'>Welcome!</h1>`);
+    // document.write(`<span>${1+1}</span>`);
+</script>
+</html>

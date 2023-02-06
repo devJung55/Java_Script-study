@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>script 태그 안에서 코드 작성</title>
+</head>
+<body>
+    <h3>마우스를 올려보세요.</h3>
+    <hr>
+    <img src="image/icon1.png" onmouseover="changeImage('over', this)" onmouseout="changeImage('out', this)">
+</body>
+<script>
+    function changeImage(e ,object){
+        object.src = e == 'over' ? 'image/icon2.png' : 'image/icon1.png';
+    }
+</script>
+</html>
