@@ -1,4 +1,4 @@
-let account = {
+let account = { // new Object(); 생략 되었다.
     owner: "정지영",
     password: "1234",
     account: "110-11-12341234"
