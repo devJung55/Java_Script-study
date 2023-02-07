@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습 1</title>
+</head>
+<body>
+    <h2>마우스를 올려보세요</h2>
+    <hr>
+    <!-- <div onmouseover="document.body.style.backgroundColor='yellow'" onmouseout="document.body.style.backgroundColor='white'">
+        여기에 마우스를 올리면 배경색이 노란색으로 변합니다.
+    </div> -->
+    <div onmouseover="changeBackground('yellow')" onmouseout="changeBackground('white')">
+        여기에 마우스를 올리면 배경색이 노란색으로 변합니다.
+    </div>
+</body>
+<script>
+    function changeBackground(color){
+        document.body.style.backgroundColor = color;
+    }
+</script>
+</html>

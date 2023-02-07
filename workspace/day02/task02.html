@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습 2</title>
+</head>
+<body></body>
+<script>
+    let dayOfWeek = prompt("요일을 입력하세요", "월~일 중에 입력하지 않으면 당신의 컴퓨터는 해킹당합니다.");
+    let message;
+
+    switch(dayOfWeek){
+        case "월": case "화": case "수": case "목":
+            message = `${dayOfWeek}요일은 출근ㅠㅠ`;
+            break;
+        case "금": case "토": case "일":
+            message = `${dayOfWeek}요일은 휴일!!`;
+            break;
+        default:
+            message = "해킹 완료";
+    }
+    document.write(`<h3>${message}</h3>`)
+</script>
+</html>
