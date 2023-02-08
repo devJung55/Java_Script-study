@@ -26,35 +26,44 @@ let productsJSON = JSON.stringify(products);
 
 let file = require('fs');
 
-file.writeFile('shop.json', productsJSON, 'utf-8', function(error){
-    if(error){
-        console.log(error)
-    }else{
-        console.log("성공!")
-    }
-});
+// file.writeFile('shop.json', productsJSON, 'utf-8', function(error){
+//     if(error){
+//         console.log(error)
+//     }else{
+//         console.log("성공!")
+//     }
+// });
 
-file.readFile('shop.json', 'utf-8', function(error, content) {
+file.readFile('shop.json', 'utf-8', (error, content) => {
     if(error){
         console.log(error);
     }else{
         let products = JSON.parse(content);
         let price = products.map(product => product.price).reduce((total, price) => total + price);
         let stock = products.map(product => product.stock).reduce((total, stock) => total + stock);
-        let productsObj = {priceTotal: 0, stockTotal: 0};
+        let productsObj = {priceTotal: price * stock, stockTotal: stock};
+        console.log(productsObj);
 
-        productsObj.priceTotal = price * stock;
-        productsObj.stockTotal = stock;
+        // productsObj.priceTotal = price * stock;
+        // productsObj.stockTotal = stock;
 
-        file.writeFile('sum.json', JSON.stringify(productsObj), 'utf-8', function(error){
-            if(error){
-                console.log(error)
-            }else{
-                console.log("성공!")
-            }
-        });
+        // file.writeFile('sum.json', JSON.stringify(productsObj), 'utf-8', function(error){
+        //     if(error){
+        //         console.log(error)
+        //     }else{
+        //         console.log("성공!")
+        //     }
+        // });
     }
 });
+
+// file.readFile('sum.json', 'utf-8', function(error, content) {
+//     if(error){
+//         console.log(error);
+//     }else{
+//         console.log(content);
+//     }
+// });
 
 // 각 상품별 총 가격을 구한 뒤 출력한다.
 // callback 함수를 사용한다.

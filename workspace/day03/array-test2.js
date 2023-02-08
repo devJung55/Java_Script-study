@@ -15,7 +15,8 @@
 // datas.filter(data => data % 2 == 0).forEach(data => console.log(data));
 
 // 한글을 정수로 변경
-// let hangle = "공일이삼사오육칠팔구".split("");
+// let hangle = "공일이삼사오육칠팔구";
+// console.log(Object.values(hangle));
 // let input = "공공이사".split("");
 // let result = input.map(input => hangle.indexOf(input)).join("");
 
