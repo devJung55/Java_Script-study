@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>콜백함수 실사용</title>
+</head>
+<body>
+    <h1>안녕하세요</h1>
+    <button onclick="changeColor(function(color){console.log(color);})">클릭</button>
+</body>
+<script>
+    function changeColor(callback) {
+        const h1 = document.getElementsByTagName("h1")[0];
+        h1.style.color = "red";
+        if(callback){
+            callback(h1.style.color);
+        }
+    }
+</script>
+</html>
