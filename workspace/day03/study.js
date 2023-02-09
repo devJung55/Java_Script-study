@@ -1,13 +1,13 @@
 // 잠실, 역삼, 노원점 스타벅스 하루 매출 판매량 총액 구하기
 
-function Starbucks(location, price, sales) {
-    this.location = location;
+function Starbucks(location, price, sales) { 
+    this.location = location;   
     this.price = price;
     this.sales = sales;
     // this.toJSON = JSON.stringify(this);
 };
 
-let starbucks = [
+let starbucks = [   
     new Starbucks("잠실", 4500, 40),
     new Starbucks("역삼", 5500, 20),
     new Starbucks("노원", 6500, 100)
@@ -33,9 +33,9 @@ let file = require('fs');
 
 // file.writeFile('kimjeongpyo.json', starbucksJSON, 'utf-8', () => {});
 
-file.readFile('kimjeongpyo.json', 'utf-8', (e, content) => {
-    if(e) {
-        console.log(e);
+file.readFile('kimjeongpyo.json', 'utf-8', (error, content) => {
+    if(error) {
+        console.log(error);
     } else {
         let starbuck = JSON.parse(content);
         let result = 0;

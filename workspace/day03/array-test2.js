@@ -5,7 +5,8 @@
 // 3. arrow expression
 
 // 1~10까지 Array객체에 담은 후 짝수만 출력
-// let datas = new Array(10).fill(0).map((data, i) => i + 1);
+// let datas = new Array(10).fill(0).map((data, i) => i + 1).filter(v => v % 2 == 0).forEach(v => console.log(v));
+
 // let datas = new Array(10).fill(0);
 // let i = 0;
 // datas.forEach(data => datas[i++] = i);
@@ -41,3 +42,7 @@
 // let datas = new Array(100).fill(0).map((data, i) => i + 1);
 // let result = datas.reduce((variable, data) => variable + data);
 // console.log(result);
+
+
+
+

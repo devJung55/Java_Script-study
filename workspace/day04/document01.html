@@ -1,0 +1,42 @@
+<!-- 
+    DOM(Document Object Model) 객체
+
+    HTML 태그들을 하나씩 객체화한 것.
+    HTML 페이지의 내용과 모양을 제어하기 위해 사용되는 객체이다.
+    HTML 태그 당 DOM 객체가 하나씩 생성된다.
+    HTML 태그의 포함관계에 따라 부모, 자식, 형제자매 관계로 구성된다. 이를 DOM트리라고 한다.
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클래스 이름을 이용한 선택</title>
+</head>
+<body>
+    <h1>클래스 이름을 이용한 선택</h1>
+    <ul>
+        <li class="odd">첫 번째 아이템이예요 !</li>
+        <li class="even">두 번째 아이템이예요 !</li>
+        <li class="odd">세 번째 아이템이예요 !</li>
+        <li class="even">네 번째 아이템이예요 !</li>
+        <li class="odd">다 번째 아이템이예요 !</li>
+    </ul>
+</body>
+<script>
+    const oddLists = document.getElementsByClassName("odd");
+    const evenLists = document.getElementsByClassName("even");
+
+    console.log(oddLists);
+    console.log(oddLists.length);
+
+    console.log(evenLists);
+    console.log(evenLists.length);
+
+    HTMLCollection.prototype.forEach = Array.prototype.forEach;
+
+    oddLists.forEach(odd => odd.style.color = 'red');
+</script>
+</html>

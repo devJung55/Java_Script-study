@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 선택자를 이용한 선택</title>
+</head>
+<body>
+    <h1>CSS 선택자를 이용한 선택</h1>
+    <p>첫 번째 단락이에요!</p>
+    <ul>
+        <li class="odd">치킨</li>
+        <li class="even">피자</li>
+        <li class="odd">파스타</li>
+        <li class="even">돈까스</li>
+        <li class="odd">마라탕</li>
+    </ul>
+</body>
+<script>
+    const p = document.querySelector("p");
+    const oddLists = document.querySelectorAll(".odd");
+    const evenLists = document.querySelectorAll(".even");
+    const allLists = document.querySelectorAll("li");
+    
+    console.log(allLists);
+    p.innerHTML = "수정된 단락이에요";
+    
+    // odd의 글자색은 전부 보라색으로,
+    // even의 글자색은 원하는 색으로 변경한다.
+    // 초보: 결과만 잘 나오도록 코딩
+    // oddLists.forEach(odd => odd.style.color = 'purple');
+    // evenLists.forEach(even => even.style.color = 'green');
+
+    // 고수: 한 줄로 해결
+    allLists.forEach((li) => li.className == "odd" ? li.style.color = 'purple' : li.style.color = 'green');
+    
+    // HTMLCollection.prototype.forEach = Array.prototype.forEach;
+    // list.forEach(li => li.style.color = li.getAttribute("class") == 'odd' ? 'purple' : 'green');
+
+    
+</script>
+</html>

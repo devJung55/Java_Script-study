@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>name을 이용한 선택</title>
+</head>
+<body>
+    <h1>name 속성을 이용한 선택</h1>
+    <form name="joinForm">
+        <div>
+            <input type="text" name="id" placeholder="아이디">
+        </div>
+        <div>
+            <input type="password" name="password" placeholder="패스워드" value="1234">
+        </div>
+        <div>
+            <label>
+                <input type="checkbox" name="language" value="java" checked="checked"> JAVA
+            </label>
+            <label>
+                <input type="checkbox" name="language" value="c"> C
+            </label>
+            <label>
+                <input type="checkbox" name="language" value="python"> Python
+            </label>
+        </div>
+    </form>
+</body>
+<script>
+    const checkboxs = document.getElementsByName("language");
+    const form = document.joinForm;
+
+    if(!form.id.value){
+        alert("아이디를 입력해주세요");
+    }
+    
+    checkboxs.forEach(checkbox => {
+        checkbox.checked = true;
+    });
+</script>
+</html>
