@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 기초 예제3</title>
+    <style>
+        input[type=checkbox] {
+            -webkit-appearance: none;
+            position: relative;
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+            border: 1px solid #eeeeee;
+            border-radius: 2px;
+            background: #fbfbfb;
+        }
+
+        input[type=checkbox]:checked {
+            background-color: red;
+            color: white;
+        }
+
+        input[type="checkbox"]:checked::before { /* 체크 모양 */
+            content: "\2713";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            line-height: 1px;
+            border-radius: 2px;
+            transform: scale(1) translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <form action="" name="myForm">
+        <div>
+            <label>
+                서비스 이용약관 동의
+                <input type="checkbox" name="term1" class="term" checked="checked">
+            </label>
+        </div>
+        <div>
+            <label>
+                광고 수신 동의
+                <input type="checkbox" name="term2" class="term">
+            </label>
+        </div>
+        <div>
+            <label>
+                개인 정보 이용약관 동의
+                <input type="checkbox" name="term3" class="term">
+            </label>
+        </div>
+    </form>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script>
+    const $checkboxes = $(".term");
+
+    // Object.prototype.forEach = Array.prototype.forEach;
+    // $checkboxes.forEach(checkbox => {console.log(checkbox.checked)});
+
+    $checkboxes.each((i, checkbox) => {
+        console.log($(checkbox).prop('checked', true));
+        if($(checkbox).is(':checked')) {
+            console.log("체크됨");
+        }
+    });
+</script>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 이동</title>
+</head>
+<body>
+    <form name="siteForm">
+        <label>
+            무신사 <input type="radio" name="site" value="musinsa">
+        </label>
+        <label>
+            쿠팡 <input type="radio" name="site" value="cupang">
+        </label>
+        <label>
+            네이버 <input type="radio" name="site" value="naver">
+        </label>
+        <label>
+            구글 <input type="radio" name="site" value="google">
+        </label>
+        <div>
+            <input type="button" value="이동">
+        </div>
+        <div>
+            <!-- <input type="button" value="새로고침" onclick="history.reload()"> -->
+            <input type="button" value="새로고침" onclick="history.go(0)">
+        </div>
+        <div>
+            <input type="button" value="앞으로 이동" onclick="history.forward(1)">
+        </div>
+    </form>
+</body>
+<script>
+    const button = document.querySelector("input[type=button]");
+    button.addEventListener("click", () => {
+        const site = siteForm.site;
+        let url;
+
+        switch(site.value) {
+            case "musinsa":
+                url = "https://www.musinsa.com/";
+                break;
+            case "cupang":
+                url = "https://www.cupang.com/";
+                break;
+            case "naver":
+                url = "https://www.naver.com/";
+                break;
+            case "google":
+                url = "https://www.google.com/";
+                break;
+            default:
+                url = "error.html";
+                break;
+        }
+        location.href = url;
+        // location.assign(url);
+        // location.replace(url);
+    });
+
+
+</script>
+</html>

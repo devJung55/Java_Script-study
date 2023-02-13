@@ -1,0 +1,44 @@
+<script>
+    const$licts = $("li")
+    // console.log($lists);
+    const $ul = $("ul.car")
+/* find('선택자') 안에서 찾는 것 즉, 자식 검사 */
+    $ul.find($("#lamborghini").text());
+
+/* closest */
+$ul.closest("body").css("background-color", "orange").find(".car").children().eq(1).text("포르쉐");
+
+/* 형제 자매 prev, next*/
+    console.log($li.prev().text());
+    console.log($li.prev().next().text());
+
+/* 자식요소 가져오기 / 첫번 째  자식을 페라리로 바꿔 */
+    $ul.children().first().text("페라리");
+  
+    /* 부모요소 가져오기 */
+    $ul.parent().css('background-color', 'yellow');
+  
+    /* background-color를 red로 바꿔줘*/
+    console.log($ul.parent().css('background-color',"red"));
+   
+    /* 두번째 자식요소를 가져와, $심볼로 감사서 js를 jQuery로 형변환 */
+    console.log($($ul.children()[2]).text());
+  
+    /* 가장 마지막 자식요소 가져와 */
+     console.log($ul.children().last().text());
+    
+    /* eq = index로 가져올 때(?) 람보르기니가 나옴 */
+    console.log($ul.children().eq(2).text());
+   
+    /* 삭제 remove*/
+    $ul.children().last().remove();
+
+    /* 추가 append*/
+    $ul.append("<li>벤틀리</li>");
+
+    /* 속성 바꾸기 / 57번 라인 = 줄 변경 후 바로 사용*/
+    console.log($ul.attr('class'));
+    // $ul.attr('class'); // 값 하나 전달 시, 속성의 value값 가져오기
+    // $ul.attr('class', 'super-car');    // 값 두개 전달 시, 속성 값에 value 값으로 수정
+</script>
+</html>

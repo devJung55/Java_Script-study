@@ -1,18 +1,18 @@
 /* 
-    day05/task02.html
+    day06/jQuery/task02.html
 */
 
-document.querySelector("#change").addEventListener("click", e => {getResult(changeToHangle)});
+$("#change").on("click", e => {getResult(changeToHangle)});
 
 function changeToHangle(number) {
-    const numbering = document.querySelector("div#round");
-    const resultTag = document.querySelector("#result");
+    const $numbering = $("div#round");
+    const $resultTag = $("#result");
     const hangle = "공일이삼사오육칠팔구";
-    let result = "", temp = "", check = false;;
+    let result = "", temp = "", check = false;
 
     if(isNaN(number) || number.charAt(0) == '.'){
-        resultTag.innerHTML = "숫자만 입력해주세요.";
-        numbering.innerHTML = "4";
+        $numbering.text("4");
+        $resultTag.text("숫자만 입력해주세요.");
         return;
     }
 
@@ -35,17 +35,17 @@ function changeToHangle(number) {
 
         result += temp;
 
-        numbering.innerHTML = "3";
+        $numbering.text("3");
         
         if(check){
-            numbering.innerHTML = "2";
+            $numbering.text("2");
         }
     }
-    resultTag.innerHTML = result;
+    $resultTag.text(result);
 }
 
 function getResult(callback){
-    const input = document.querySelector("input[name='input']").value;
+    const input = $("input[name='input']").val();
     if(callback){
         callback(input);
     }

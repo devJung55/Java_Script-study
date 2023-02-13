@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>포커스 이벤트</title>
+    <style>
+        .id-focus {
+            border: 1px solid blue;
+        }
+    </style>
 </head>
 <body>
     <form name="joinForm">
@@ -26,10 +31,11 @@
             result.innerHTML = "아이디를 입력해주세요";
             result.style.color = "red";
             this.focus();
-        }else{
+        } else{
             result.innerHTML = "사용 가능한 아이디입니다.";
             result.style.color = "blue";
-        }
+        } 
     });
+
 </script>
 </html>

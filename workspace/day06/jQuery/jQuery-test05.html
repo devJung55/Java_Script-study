@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 비밀번호 표시</title>
+    <style>
+        #wrap {
+            border: 0.5px solid #00000026;
+            width: 250px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        div.password {
+            width: 200px;
+        }
+
+        div.password input {
+            outline: none;
+            border: none;
+        }
+
+        div.eye {
+            cursor: pointer;
+            width: 50px;
+            height: 25px;
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+
+        div.show {
+            background-image: url("show.png");
+        }
+        
+        div.hide {
+            background-image: url("hide.png");
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="password">
+            <input type="password" name="userPassword" placeholder="비밀번호">
+        </div>
+        <div class="hide eye"></div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script>
+    const eye = $(".eye");
+
+    eye.click(function(){
+        const statusForStyle = {show: 'hide', hide: 'show'};
+        const statusForType = {show: 'text', hide: 'password'};
+
+        $(this).prop('classList').replace(getCurrentStatus(), statusForStyle[getCurrentStatus()]);
+        $("input[name=userPassword]").attr('type', statusForType[getCurrentStatus()]);
+    });
+
+    function getCurrentStatus(){
+        return eye.prop('classList')[0];
+    }
+</script>
+</html>

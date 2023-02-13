@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 전체 동의</title>
+</head>
+<body>
+    <form name="termForm">
+        <div>
+            <label>
+                전체 동의
+                <input type="checkbox" class="all">
+            </label>
+        </div>
+        <div>
+            <label>
+                서비스 이용약관 동의
+                <input type="checkbox" name="term1" class="term">
+            </label>
+        </div>
+        <div>
+            <label>
+                광고 수신 동의
+                <input type="checkbox" name="term2" class="term">
+            </label>
+        </div>
+        <div>
+            <label>
+                개인 정보 이용약관 동의
+                <input type="checkbox" name="term3" class="term">
+            </label>
+        </div>
+    </form>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script>
+    const $all = $(".all");
+    const $checkboxes = $(".term");
+
+    $all.on("click", function(){
+        $checkboxes.prop('checked', $(this).is(":checked"));
+    });
+    
+    $checkboxes.click(function(){
+        $all.prop("checked", $checkboxes.filter(":checked").length == 3);
+    });
+
+</script>
+</html>
